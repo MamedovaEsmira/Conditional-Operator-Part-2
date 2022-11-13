@@ -1,6 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        //Задача1
         System.out.println("Задача1");
         int clientOS = 1;
         if (clientOS == 0) {
@@ -8,7 +7,6 @@ public class Main {
         } else {
             System.out.println("Установите версию приложения для Android по ссылке");
         }
-        //Задача2
         System.out.println("Задача2");
         int clientDeviceYear = 2019;
         if (clientOS == 0) {
@@ -44,7 +42,7 @@ public class Main {
             }
             System.out.println("Потребуется дней:" + DeliveryDays);
         }
-          //Задача5
+        //Задача5
         System.out.println("Задача5");
         int monthNumber = 3;
         switch (monthNumber) {
@@ -112,5 +110,41 @@ public class Main {
             default:
                 System.out.println("Такого времени года не существует");
         }
+        System.out.println("Задача № 6: повышенной сложности");
+        int age = 28;
+        double salary = 88000;
+        if (age >= 23) {
+            System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 3) + " рублей");
+        }
+        if (age < 23) {
+            System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 2) + " рублей");
+        } else if (salary >= 50000) {
+            System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 1.2) + " рублей");
+        } else {
+            System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 1.5) + " рублей");
+        }
+        task7();}
+    public static void task7() {
+        System.out.println("Задача № 7: повышенной сложности");
+        int age = 25;
+        double salary = 60000;
+        double wantedSum = 250000;
+        double rate = salary > 80000 ? (10 - 0.7) : 10;
+        if (age < 23)
+            rate += 1;
+        else if (age < 30)
+            rate += 0.5;
+        double maxPayment = salary / 2;
+        double regularPayment = wantedSum * (1 + rate / 100) / 12;
+        System.out.printf("Максимальный платеж при ЗП  %.2f равен %.2f рублей. Платеж по кредиту %.2f  рублей.",salary, maxPayment, regularPayment);
+        System.out.println();
+   if(maxPayment<regularPayment)
+       System.out.println("Отказано");
+    else
+       System.out.println("Одобрено");
+
     }
 }
+
+
+
